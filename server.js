@@ -9,7 +9,10 @@ const dotenv=require('dotenv')
 dotenv.config({})
 // npm i cors
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+  origin: 'https://hotel-app-liard-ten.vercel.app', // your frontend Vercel domain
+  credentials: true
+}));
 
 // npm i mongoose
 const connectDb = require('./db');
